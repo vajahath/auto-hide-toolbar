@@ -2,7 +2,7 @@
 
 Angular auto hiding header component (Ivy compatible, minimal (less than 3kb), zero dependencies).
 
-![auto-hiding-toolbar-demo](./auto-hide-toolbar.gif)
+![auto-hiding-toolbar-demo](https://github.com/vajahath/auto-hide-toolbar/raw/master/projects/auto-hide-toolbar/auto-hide-toolbar.gif)
 
 ## Install
 
