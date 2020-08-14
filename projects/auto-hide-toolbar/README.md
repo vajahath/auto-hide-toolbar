@@ -1,24 +1,52 @@
 # AutoHideToolbar
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.9.
+Angular auto hiding header component (Ivy compatible, minimal (less than 3kb), zero dependencies).
 
-## Code scaffolding
+![auto-hiding-toolbar-demo](./auto-hide-toolbar.gif)
 
-Run `ng generate component component-name --project auto-hide-toolbar` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project auto-hide-toolbar`.
-> Note: Don't forget to add `--project auto-hide-toolbar` or else it will be added to the default project in your `angular.json` file. 
+## Install
 
-## Build
+To install this lib in your angular project
 
-Run `ng build auto-hide-toolbar` to build the project. The build artifacts will be stored in the `dist/` directory.
+```bash
+ng add auto-hide-toolbar
+```
 
-## Publishing
+## Usage
 
-After building your library with `ng build auto-hide-toolbar`, go to the dist folder `cd dist/auto-hide-toolbar` and run `npm publish`.
+`your.module.ts`
+```ts
+import { AutoHideToolbarModule } from 'auto-hide-toolbar';
+// ...
+@NgModule({
+  ...
+  imports: [..., AutoHideToolbarModule],
+})
+export class YourModule {}
+```
 
-## Running unit tests
+`your.component.html`
+```html
+<!-- page top -->
+<lib-auto-hide-toolbar shadowPadding="9">
+  <!-- your toolbar html goes here -->
+</lib-auto-hide-toolbar>
+```
 
-Run `ng test auto-hide-toolbar` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Example
+```html
+<lib-auto-hide-toolbar shadowPadding="9">
+  <div style="background-color: purple; padding: 5px;">
+    <h1 style="margin: 0px; color: wheat;">Demo Toolbar</h1>
+  </div>
+</lib-auto-hide-toolbar>
+```
 
-## Further help
+### Attribute `shadowPadding`
+Adds basic padding below the falling header component - to preserve shadows if any. Unit in pixels.
+</br>
+</br>
+[Project scaffolded with Angular 10.0.9]
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Licence
+MIT &copy; 2020 [Vajahath Ahmed](https://twitter.com/vajahath7)

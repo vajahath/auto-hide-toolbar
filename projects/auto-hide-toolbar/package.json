@@ -1,10 +1,21 @@
 {
   "name": "auto-hide-toolbar",
-  "version": "0.0.1",
+  "version": "1.0.0",
+  "description": "Dead simple angular auto hiding toolbar",
   "peerDependencies": {
     "@angular/common": "^10.0.9",
     "@angular/core": "^10.0.9"
   },
+  "license": "MIT",
+  "author": "Vajahath Ahmed <vajuoff.1@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vajahath/auto-hide-toolbar.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vajahath/auto-hide-toolbar/issues"
+  },
+  "homepage": "https://github.com/vajahath/auto-hide-toolbar#readme",
   "dependencies": {
     "tslib": "^2.0.0"
   }
