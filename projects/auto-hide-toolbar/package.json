@@ -6,11 +6,17 @@
     "@angular/common": "^10.0.9",
     "@angular/core": "^10.0.9"
   },
+  "keywords": [
+    "angular",
+    "ux",
+    "material"
+  ],
   "license": "MIT",
   "author": "Vajahath Ahmed <vajuoff.1@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vajahath/auto-hide-toolbar.git"
+    "url": "git+https://github.com/vajahath/auto-hide-toolbar.git",
+    "directory": "projects/auto-hide-toolbar"
   },
   "bugs": {
     "url": "https://github.com/vajahath/auto-hide-toolbar/issues"

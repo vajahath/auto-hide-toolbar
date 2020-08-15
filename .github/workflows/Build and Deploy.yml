@@ -1,0 +1,67 @@
+name: Build and Deploy
+on:
+  push:
+    paths:
+      - '**.js'
+      - '**.ts'
+      - '**.html'
+      - '**.json'
+      - '**.lock'
+      - '**.yml'
+  pull_request:
+    paths:
+      - '**.js'
+      - '**.ts'
+      - '**.html'
+      - '**.json'
+      - '**.lock'
+      - '**.yml'
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '14'
+      - run: node --version
+      - run: npm ci
+      - run: npm run lint:lib
+      - run: npm run build:lib
+      - uses: actions/upload-artifact@v2
+        with:
+          name: build-artifacts
+          path: dist/auto-hide-toolbar
+
+  gpr_npm_deploy:
+    name: Deploy To GPR
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.event_name=='release' && github.event.action == 'published'
+    steps:
+      # Download artifacts
+      - uses: actions/download-artifact@v2
+        with:
+          name: build-artifacts
+      - name: Display structure of downloaded files
+        run: ls -R
+
+      # to npm
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '14'
+          registry-url: 'https://registry.npmjs.org'
+      - run: npm publish --dry-run
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      # to GH
+      - uses: actions/setup-node@v1
+        with:
+          registry-url: 'https://npm.pkg.github.com'
+      - run: npx @vaju/npm-scope-prefixer --scope vajahath
+      - run: npm publish --dry-run
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GH_TOKEN }}
