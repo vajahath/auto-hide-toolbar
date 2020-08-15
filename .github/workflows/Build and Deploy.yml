@@ -27,7 +27,7 @@ jobs:
         with:
           node-version: '14'
       - run: node --version
-      - run: npm ci
+      - run: yarn install --frozen-lockfile
       - run: npm run lint:lib
       - run: npm run build:lib
       - uses: actions/upload-artifact@v2
