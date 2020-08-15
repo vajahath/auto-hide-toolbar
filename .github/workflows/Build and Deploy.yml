@@ -31,6 +31,7 @@ jobs:
       - run: npm run lint:lib
       - run: npm run build:lib
       - uses: actions/upload-artifact@v2
+        if: github.event_name=='release' && github.event.action == 'published'
         with:
           name: build-artifacts
           path: dist/auto-hide-toolbar
