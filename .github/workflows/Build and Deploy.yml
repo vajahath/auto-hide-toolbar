@@ -28,7 +28,6 @@ jobs:
           node-version: '14'
       - run: node --version
       - uses: bahmutov/npm-install@v1
-      - run: npm t
       # - run: yarn install --frozen-lockfile
       - run: npm run lint:lib
       - run: npm run build:lib
