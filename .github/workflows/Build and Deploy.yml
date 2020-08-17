@@ -1,5 +1,7 @@
 name: Build and Deploy
 on:
+  release:
+    types: [published]
   push:
     paths:
       - '**.js'
@@ -34,7 +36,7 @@ jobs:
       - run: echo ${{github.event_name}}
       - run: echo ${{github.event.action}}
       - uses: actions/upload-artifact@v2
-        if: github.event_name=='release' && github.event.action == 'created'
+        if: github.event_name=='release' && github.event.action == 'published'
         with:
           name: build-artifacts
           path: dist/auto-hide-toolbar
@@ -43,7 +45,7 @@ jobs:
     name: Deploy To GPR
     needs: build
     runs-on: ubuntu-latest
-    if: github.event_name=='release' && github.event.action == 'created'
+    if: github.event_name=='release' && github.event.action == 'published'
     steps:
       # Download artifacts
       - uses: actions/download-artifact@v2

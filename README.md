@@ -16,6 +16,7 @@ ng add auto-hide-toolbar
 
 ## Demo
 ```sh
+# clone and cd
 npm start
 ```
 
