@@ -1,6 +1,6 @@
 {
   "name": "auto-hide-toolbar",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Dead simple angular auto hiding toolbar",
   "peerDependencies": {
     "@angular/common": "^10.0.9",
