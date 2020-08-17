@@ -42,7 +42,7 @@ jobs:
           path: dist/auto-hide-toolbar
 
   gpr_npm_deploy:
-    name: Deploy To GPR
+    name: Deploy To GPR and NPM
     needs: build
     runs-on: ubuntu-latest
     if: github.event_name=='release' && github.event.action == 'published'
@@ -59,7 +59,7 @@ jobs:
         with:
           node-version: '14'
           registry-url: 'https://registry.npmjs.org'
-      - run: npm publish --dry-run
+      - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
@@ -68,6 +68,6 @@ jobs:
         with:
           registry-url: 'https://npm.pkg.github.com'
       - run: npx @vaju/npm-scope-prefixer --scope vajahath
-      - run: npm publish --dry-run
+      - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GH_TOKEN }}

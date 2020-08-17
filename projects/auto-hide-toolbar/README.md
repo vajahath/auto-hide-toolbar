@@ -2,7 +2,7 @@
 
 ![Build and Deploy](https://github.com/vajahath/auto-hide-toolbar/workflows/Build%20and%20Deploy/badge.svg)
 
-Angular auto hiding header component (Ivy compatible, minimal (less than 3kb), zero dependencies).
+Angular auto hiding header component (Ivy compatible, optimized, minimal (less than 3kb), zero dependencies).
 
 ![auto-hiding-toolbar-demo](./auto-hide-toolbar.gif)
 
