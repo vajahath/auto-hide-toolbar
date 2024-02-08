@@ -1,62 +1,27 @@
 # AutoHideToolbar
 
-![Build and Deploy](https://github.com/vajahath/auto-hide-toolbar/workflows/Build%20and%20Deploy/badge.svg)
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.2.
 
-Angular auto hiding header component (For angular 12, optimized, minimal (less than 3kb), zero dependencies).
+## Development server
 
-![auto-hiding-toolbar-demo](https://github.com/vajahath/auto-hide-toolbar/raw/master/projects/auto-hide-toolbar/auto-hide-toolbar.gif)
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Install
+## Code scaffolding
 
-To install this lib in your angular project
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-```bash
-ng add auto-hide-toolbar
-```
+## Build
 
-## Demo
-```sh
-# clone and cd
-npm start
-```
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-Library root: `./projects/auto-hide-toolbar`
+## Running unit tests
 
-## Usage
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-`your.module.ts`
-```ts
-import { AutoHideToolbarModule } from 'auto-hide-toolbar';
-// ...
-@NgModule({
-  ...
-  imports: [..., AutoHideToolbarModule],
-})
-export class YourModule {}
-```
+## Running end-to-end tests
 
-`your.component.html`
-```html
-<!-- page top -->
-<lib-auto-hide-toolbar shadowPadding="9">
-  <!-- your toolbar html goes here -->
-</lib-auto-hide-toolbar>
-```
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-### Example
-```html
-<lib-auto-hide-toolbar shadowPadding="9">
-  <div style="background-color: purple; padding: 5px;">
-    <h1 style="margin: 0px; color: wheat;">Demo Toolbar</h1>
-  </div>
-</lib-auto-hide-toolbar>
-```
+## Further help
 
-### Attribute `shadowPadding`
-Adds basic padding below the falling header component - to preserve shadows if any. Unit in pixels.
-</br>
-</br>
-[Project scaffolded with Angular 10.0.9]
-
-## Licence
-MIT &copy; 2020 [Vajahath Ahmed](https://twitter.com/vajahath7)
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
