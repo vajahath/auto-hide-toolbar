@@ -3,5 +3,41 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+    "auto-hide-toolbar": {
+      "projectType": "library",
+      "root": "projects/auto-hide-toolbar",
+      "sourceRoot": "projects/auto-hide-toolbar/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/auto-hide-toolbar/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/auto-hide-toolbar/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/auto-hide-toolbar/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/auto-hide-toolbar/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "analytics": "29c99af3-87c4-4fc5-8770-671a17c1423e"
   }
 }
